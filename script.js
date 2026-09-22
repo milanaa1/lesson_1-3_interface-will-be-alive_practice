@@ -14,7 +14,12 @@ let clickCount = 0;
 
 firstCard.addEventListener("click", () => {
   clickCount = clickCount + 1;
-  labStatus.textContent = `${eventName}: нажатий ${clickCount}`;
+
+  if (clickCount === 1) {
+    labStatus.textContent = `Первое открытие: ${eventName}`;
+  } else {
+    labStatus.textContent = `Повторное открытие: ${eventName}`;
+  }
 });
 
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
