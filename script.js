@@ -12,9 +12,21 @@ const detailsTime = document.querySelector("#details-time");
 const cards = document.querySelectorAll("[data-event]");
 const eventCount = document.querySelector("#event-count");
 
+const detailsPanel = document.querySelector("#event-details");
+let selectedCard = null;
+
 eventCount.textContent = cards.length;
 
 function showEvent(card) {
+  if (selectedCard !== null) {
+    selectedCard.classList.remove("event-card--selected");
+  }
+
+  card.classList.add("event-card--selected");
+  selectedCard = card;
+
+  detailsPanel.style.setProperty("--accent", card.dataset.accent);
+
   detailsTitle.textContent = card.dataset.title;
   detailsDescription.textContent = card.dataset.description;
   detailsTime.textContent = card.dataset.time;
