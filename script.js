@@ -6,13 +6,16 @@
 const firstCard = document.querySelector('[data-event="talk"]');
 const labStatus = document.querySelector("#lab-status");
 
+const eventName = "Город в деталях";
+let clickCount = 0;
+
 // 01. Уберите /* и */ вокруг обработчика, сохраните файл и нажмите
 // первую карточку. Потом переходите к заданию 02 в TASKS.md.
 
 firstCard.addEventListener("click", () => {
-  labStatus.textContent = "Клик сработал. JavaScript подключен!";
+  clickCount = clickCount + 1;
+  labStatus.textContent = `${eventName}: нажатий ${clickCount}`;
 });
-
 
 // 02–03. Вы будете постепенно менять обработчик выше: добавите
 // переменные, счетчик нажатий и условие. Не создавайте второй
