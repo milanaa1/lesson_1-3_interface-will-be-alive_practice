@@ -11,6 +11,11 @@ const detailsTitle = document.querySelector("#details-title");
 const eventName = "Город в деталях";
 let clickCount = 0;
 
+const cards = document.querySelectorAll("[data-event]");
+const eventCount = document.querySelector("#event-count");
+
+eventCount.textContent = cards.length;
+
 // 01. Уберите /* и */ вокруг обработчика, сохраните файл и нажмите
 // первую карточку. Потом переходите к заданию 02 в TASKS.md.
 
